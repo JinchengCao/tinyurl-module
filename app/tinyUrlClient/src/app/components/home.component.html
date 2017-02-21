@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <h4 for="longUrlInput">Input your Long URL</h4>
+            <input name="longUrlInput" type="text" [(ngModel)]="longUrl" class="form-control" 
+            placeholder="Please enter your long url" required>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Get your short URL"/>
+        </form>
+    </div>
+</div>

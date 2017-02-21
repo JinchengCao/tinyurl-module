@@ -1,0 +1,111 @@
+<div class="row">
+    <div class="col-md-5 col-md-offset-2">
+        <div class="row">
+            <h4>Your Long Url Is:</h4>
+            <a target="_blank" [href]="longUrl">{{longUrl}}</a>
+        </div>
+        <div class="row">
+            <h4>Your Short Url Is:</h4>
+            <a target="_blank" [href]="shortUrl">{{shortUrlToShow}}</a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Total Clicks
+            </div>
+            <div class="panel-body">
+                {{ totalClicks }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Time line charts -->
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Clicks for the past:
+                <a href="javascript:void(0);" (click)="getTime('hour')" [ngClass]="{'text-muted': time === 'hour'}">Hour</a>
+                <a href="javascript:void(0);" (click)="getTime('day')" [ngClass]="{'text-muted': time === 'day'}">Day</a>
+                <a href="javascript:void(0);" (click)="getTime('month')" [ngClass]="{'text-muted': time === 'month'}">Month</a>
+            </div>
+            <div class="panel-body">
+                <div style="display: block">
+                    <canvas baseChart
+                            [data]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [chartType]="lineChartType"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End of time line chart -->
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Referer
+            </div>
+            <div class="panel-body">
+                <div style="display: block">
+                    <canvas baseChart
+                            [data]="pieChartData"
+                            [labels]="pieChartLabels"
+                            [chartType]="pieChartType"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Countries
+            </div>
+            <div class="panel-body">
+                <div style="display: block">
+                    <canvas  baseChart
+                            [data]="doughnutChartData"
+                            [labels]="doughnutChartLabels"
+                            [chartType]="doughnutChartType"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Plantform
+            </div>
+            <div class="panel-body">
+                <div style="display: block">
+                    <canvas baseChart
+                            [data]="polarAreaChartData"
+                            [labels]="polarAreaChartLabels"
+                            [chartType]="polarAreaChartType"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Browser
+            </div>
+            <div class="panel-body">
+                <div style="display: block">
+                    <canvas  baseChart
+                            [data]="radarChartData"
+                            [labels]="radarChartLabels"
+                            [chartType]="radarChartType"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
